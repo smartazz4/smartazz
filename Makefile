@@ -12,5 +12,3 @@ SuccessionCLIhelper_CODESIGN_FLAGS = -Sent.plist
 
 
 include $(THEOS_MAKE_PATH)/tool.mk
-SUBPROJECTS += device_info
-include $(THEOS_MAKE_PATH)/aggregate.mk
