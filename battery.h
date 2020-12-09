@@ -1,17 +1,19 @@
-#import <stdbool.h>
-
+// UIKit
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import <stdio.h>
 
-int batterylevel()
-{
+// Battery Information
+
+// Battery Level
+float batterylevel()
+ {
+    // Find the battery level
+        // Get the device
         UIDevice *device = [UIDevice currentDevice];
         // Set battery monitoring on
         device.batteryMonitoringEnabled = YES;
         
         // Set up the battery level float
-float batteryLevel=0.0;
+        float batteryLevel = 0.0;
         // Get the battery level
         float batteryCharge = [device batteryLevel];
         
@@ -25,12 +27,12 @@ float batteryLevel=0.0;
         }
         
         // Output the battery level
-        return                batteryLevel;
-    }
-bool  ischarging()
-{
+        return batteryLevel;
+}
+ 
+// Charging?
+bool charging() {
     // Is the battery charging?
-
         // Get the device
         UIDevice *device = [UIDevice currentDevice];
         // Set battery monitoring on
@@ -45,28 +47,3 @@ bool  ischarging()
             return false;
         }
     }
-bool fullycharged()
-{
-    // Is the battery fully charged?
-
-        // Get the device
-        UIDevice *device = [UIDevice currentDevice];
-        // Set battery monitoring on
-        device.batteryMonitoringEnabled = YES;
-        
-        // Check the battery state
-        if ([device batteryState] == UIDeviceBatteryStateFull) {
-            // Device is fully charged
-            return true;
-        } else {
-            // Device is not fully charged
-            return false;
-        }
-    }
-int batterymanager ()
-{
-   float batteryLevel=batterylevel();
-bool   isCharging=ischarging();
-bool fullyCharged=fullycharged();
-return 0;
-}
