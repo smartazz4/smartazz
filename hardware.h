@@ -1,11 +1,9 @@
 // UIKit
 #import <UIKit/UIKit.h>
 
-// Core Motion
-#import <CoreMotion/CoreMotion.h>
 
-// sysctl
-#import <sys/sysctl.h>
+
+
 // utsname
 #import <sys/utsname.h>
 
@@ -63,4 +61,21 @@ NSString *systemversion() {
         // System version not found
         return nil;
     }
+}
+// System Device Type (iPhone1,0) 
+NSString *devicetype() {
+
+ // Set up a Device Type String
+
+        // Unformatted
+            NSString *deviceType;
+            // Set up a struct
+            struct utsname dt;
+            // Get the system information
+            uname(&dt);
+            // Set the device type to the machine type
+            deviceType = [NSString stringWithFormat:@"%s", dt.machine];
+
+            // Return the device type
+            return deviceType;
 }
