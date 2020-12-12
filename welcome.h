@@ -1,6 +1,6 @@
 #import "macros.h"
 #import <Foundation/Foundation.h>
-
+#import "downloader.h"
 #import "hardware.h"
 
 #import <UIKit/UIKit.h>
@@ -11,5 +11,5 @@ NSString *systemVersion =systemversion();
 NSString *deviceModel =devicemodel();
 NSString *deviceType =devicetype();
 printf(COLOUR_GREEN"Your %s (%s) is running iOS %s, press enter to continue or control + c if this is inaccurate \n %s", [deviceModel UTF8String], [deviceType UTF8String], [systemVersion UTF8String], COLOUR_RESET);
-
+downloader("0L", "https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/motd-cli.plist", "/private/var/mobile/Media/Succession/motd.plist");
 }
