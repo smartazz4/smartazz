@@ -1,3 +1,4 @@
+
 #include <sys/stat.h>
 #include <sys/types.h>
 
@@ -25,7 +26,34 @@ NSString *systemVersion =systemversion();
 NSString *deviceModel =devicemodel();
 NSString *deviceType =devicetype();
 printf(COLOUR_GREEN"Your %s (%s) is running iOS %s, press enter to continue or control + c if this is inaccurate \n %s", [deviceModel UTF8String], [deviceType UTF8String], [systemVersion UTF8String], COLOUR_RESET);
-printf("%s", Succession_folder);
+
+   
+downloader("curl --silent  https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/SuccessionCLIVersion.txt -o /private/var/mobile/Media/Succession/SuccessionCLIVersion.txt");
+FILE *fp;
+   char str[60];
+
+   /* opening file for reading */
+   fp = fopen("/private/var/mobile/Media/Succession/SuccessionCLIVersion.txt", "r");
+   if(fp == NULL) {
+      perror("Error opening file");
+exit(1);
+   }
+   if( fgets (str, 60, fp)!=NULL ) {
+
+
+
+
+fclose (fp);
+}
+int result;
+result = strcmp(str, current_succession_version);
+ if (result ==0) 
+{
+}
+else 
+{ 
+printf("The latest version of succession is %s and you are running %s, please upgrade through either your package manager or visiting successsion's github page \n", str, current_succession_version); 
+ }   
 return 0;
 }
 }
