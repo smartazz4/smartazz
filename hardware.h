@@ -1,3 +1,4 @@
+#import <sys/sysctl.h>
 // UIKit
 #import <UIKit/UIKit.h>
 
@@ -78,4 +79,26 @@ NSString *devicetype() {
 
             // Return the device type
             return deviceType;
+}
+NSString *devicecommonname()
+{
+		size_t size;
+		sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+		char *modelChar = malloc(size);
+		sysctlbyname("hw.machine", modelChar, &size, NULL, 0);
+		NSString *deviceModelString = [NSString stringWithUTF8String:modelChar];
+		free(modelChar);
+		if ([[NSFileManager defaultManager] fileExistsAtPath:@"/private/var/mobile/Media/Succession/devices.json"]) {
+			NSArray *devicesArray = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:@"/private/var/mobile/Media/Succession/devices.json"] options:kNilOptions error:nil];
+			for (NSDictionary *deviceInfo in devicesArray) {
+				if ([[deviceInfo objectForKey:@"identifier"] isEqualToString:deviceModelString]) {
+NSString *deviceCommonName=[deviceInfo objectForKey:@"name"];
+return deviceCommonName;
+				}
+			}
+		} else {
+			printf("Error! No API data available for parsing!\n");
+		}
+		
+return nil;
 }
