@@ -17,6 +17,22 @@ downloader("curl --silent https://raw.githubusercontent.com/Samgisaninja/samgisa
 downloader("curl --silent 'https://api.ipsw.me/v4/devices' -o /private/var/mobile/Media/Succession/devices.json");
 downloader("curl --silent  https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/SuccessionCLIVersion.txt -o /private/var/mobile/Media/Succession/SuccessionCLIVersion.txt");
 }
+else if ((fileExists=file_checker(SUCCESSION_FOLDER"motd.plist")) ==-1)
+{
+downloader("curl --silent https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/motd-cli.plist -o /private/var/mobile/Media/Succession/motd.plist");
+}
+else if ((fileExists=file_checker(SUCCESSION_FOLDER"devices.json")) ==-1)
+  
+{
+downloader("curl --silent 'https://api.ipsw.me/v4/devices' -o /private/var/mobile/Media/Succession/devices.json");
+}
+else if ((fileExists=file_checker(SUCCESSION_FOLDER"devices.SuccessionCLIVersion.txt")) ==-1) 
+{
+downloader("curl --silent  https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/SuccessionCLIVersion.txt -o /private/var/mobile/Media/Succession/SuccessionCLIVersion.txt");
+}
+else 
+{
+}
 
 printf(COLOUR_GREEN"Welcome to SuccessionCLI! Written by Samg_is_a_Ninja and Hassan’s Tech (demhademha) \n Special thanks to pwn20wnd (mountpoint and rsync args) and shmoopi (for iOS System Services \n If you found this tool useful, then consider donating to demhademha at https://www.paypal.me/demhademha and to Samg_is_a_Ninja at \n https://www.paypal.me/SamGardner4 In addition, you can visit https://github.com/Samgisaninja/SuccessionRestore/tree/SuccessionCLI to get support \n"COLOUR_RESET);
 
