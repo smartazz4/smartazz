@@ -3,5 +3,5 @@
 #define COLOUR_YELLOW "\e[1;33m"
 #define COLOUR_RED "\e[1;31m"
 #define COLOUR_GREEN "\e[1;32m"
-#define Succession_folder "/private/var/mobile/Media/Succession"
-#define current_succession_version "1.0~alpha0"  
+#define SUCCESSION_FOLDER "/private/var/mobile/Media/Succession"
+#define CURRENT_SUCCESSION_VERSION "1.0~alpha0"  
