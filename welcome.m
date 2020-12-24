@@ -1,15 +1,4 @@
-#import "folder_checker.h"
-#include "file_checker.h"
-#include <sys/stat.h>
-#include <sys/types.h>
-
- 
-#import "macros.h"
-#import <Foundation/Foundation.h>
-#import "downloader.h"
-#import "hardware.h"
-
-#import <UIKit/UIKit.h>
+#import "welcome.h"
 int main ()
 {
 if(geteuid() != 0)
@@ -19,7 +8,7 @@ exit(1);
 }
 else
 {
-int folderExists;
+
 if ((folderExists=folder_checker(SUCCESSION_FOLDER)) == -1)
 {
 //the successionFolder is  "/private/var/mobile/Media/Succession/"
