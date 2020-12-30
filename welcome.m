@@ -1,24 +1,40 @@
 #import "welcome.h"
 int main ()
 {
+char *fileName="text.log";
+logger("Began main function", fileName); 
+logger("checking for  root", fileName);
 if(geteuid() != 0)
 {
+logger("failed to obtain root, displaying failure alert...", fileName);
 printf(COLOUR_RED"SuccessionCLI needs to be run as root. Please \"su\" and try again. Alternatively, try \"ssh root@[IP Address\n"COLOUR_RESET);
+logger("successfully displayed failure alert", fileName);
+logger("aborting succession_c", fileName);
 exit(1);
 }
 else
 {
-
+logger("obtained root", fileName);
+logger("checking if the succession folder exists", fileName);
 if ((folderExists=folder_checker(SUCCESSION_FOLDER)) == -1)
 {
 //the successionFolder is  "/private/var/mobile/Media/Succession/"
+logger("Creating the succession folder", fileName);
 mkdir(SUCCESSION_FOLDER, 0777);
+logger("created the succession folder", fileName);
+logger("Downloading motd.plist", fileName);
 downloader("curl --silent https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/motd-cli.plist -o /private/var/mobile/Media/Succession/motd.plist");
+logger("Successfully download motd.plist", fileName);
+logger("Downloading devices.json", fileName);
 downloader("curl --silent 'https://api.ipsw.me/v4/devices' -o /private/var/mobile/Media/Succession/devices.json");
+logger("Successfully downloaded devices.json", fileName);
+logger("Downloading SuccessionCLIVersion.txt", fileName);
 downloader("curl --silent  https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/SuccessionCLIVersion.txt -o /private/var/mobile/Media/Succession/SuccessionCLIVersion.txt");
 }
 else if ((fileExists=file_checker(SUCCESSION_FOLDER"motd.plist")) ==-1)
 {
+logger("Motd.plist does not exist", fileName);
+logger("Downloading motd.plist", fileName);
 downloader("curl --silent https://raw.githubusercontent.com/Samgisaninja/samgisaninja.github.io/master/motd-cli.plist -o /private/var/mobile/Media/Succession/motd.plist");
 }
 else if ((fileExists=file_checker(SUCCESSION_FOLDER"devices.json")) ==-1)

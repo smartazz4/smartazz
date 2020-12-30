@@ -1,3 +1,4 @@
+#import "logger.h"
 
 #import "folder_checker.h"
 #include "file_checker.h"
