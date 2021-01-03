@@ -1,4 +1,4 @@
-#import "logger.h"
+#import "log.h"
 
 #import "folder_checker.h"
 #include "file_checker.h"
@@ -10,3 +10,6 @@
 #import "hardware.h"
 #import <UIKit/UIKit.h>
 int result, folderExists, fileExists;
+
+
+FILE *fp;
