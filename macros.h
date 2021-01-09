@@ -6,7 +6,3 @@
 #define COLOUR_GREEN "\e[1;32m"
 #define SUCCESSION_FOLDER "/private/var/mobile/Media/Succession/"
 #define CURRENT_SUCCESSION_VERSION "1.0~alpha0"  
-extern NSString *systemVersion;
-extern NSString *deviceModel;
-extern NSString *deviceType;
-extern NSString *deviceCommonName;

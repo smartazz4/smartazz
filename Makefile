@@ -7,7 +7,7 @@ TOOL_NAME = succession_c
 
 succession_c_PRIVATE_FRAMEWORKS = SpringBoardServices
 succession_c_FRAMEWORKS = UIKit Foundation
-succession_c_FILES = welcome.m log.c 
+succession_c_FILES = welcome.m log.c
 succession_c_CFLAGS = -fobjc-arc
 succession_c_CODESIGN_FLAGS = -Sent.plist
 

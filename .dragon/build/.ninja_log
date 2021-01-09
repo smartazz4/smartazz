@@ -1,0 +1,16 @@
+# ninja log v5
+14	5371	1609799208565554688	.dragon/build/arm64e/hardware.m.o	5e4db5bef66a9492
+34	5393	1609799208566379048	.dragon/build/armv7/hardware.m.o	fa35131bccb8c556
+6	5434	1609799208565681186	.dragon/build/arm64/hardware.m.o	194cd10d58a84b5e
+21	5476	1609799208841962458	.dragon/build/arm64e/test.m.o	d8e8658e1210d507
+1	5541	1609799208906733649	.dragon/build/armv7/test.m.o	c5d7df01cf069dff
+8	5757	1609799209123588629	.dragon/build/arm64/test.m.o	76098c8fd688accd
+5476	5871	0	.dragon/build/succession_c.arm64e	f0449f7253f9108c
+5541	5875	0	.dragon/build/succession_c.armv7	df3c7751c0ca9937
+5757	5966	0	.dragon/build/succession_c.arm64	51fe120e177b6226
+0	331	0	.dragon/build/succession_c.armv7	df3c7751c0ca9937
+1	338	0	.dragon/build/succession_c.arm64	51fe120e177b6226
+1	346	0	.dragon/build/succession_c.arm64e	f0449f7253f9108c
+4	351	0	.dragon/build/succession_c.armv7	df3c7751c0ca9937
+9	351	0	.dragon/build/succession_c.arm64e	f0449f7253f9108c
+8	351	0	.dragon/build/succession_c.arm64	51fe120e177b6226

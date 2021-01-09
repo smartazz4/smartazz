@@ -86,6 +86,14 @@ log_trace("The device type is   %s", [deviceType UTF8String]);
 log_trace("setting the  device common name"); 
 NSString *deviceCommonName =devicecommonname();
 log_trace("The device common name  is   %s", [deviceCommonName UTF8String]);
+log_trace("Checking if the device is an iPhone 6s on iOS 9");   
+    if (deviceType  == "iPhone8,1" ) || ( deviceType   == @"iPhone8,2" ) 
+{
+log_trace("Device is not supported, displaying failure alert");
+printf(COLOUR_RED("Succession is disabled: the iPhone 6s cannot be activated on iOS 9."COLOUR_RESET);
+log_trace("Aborting succession");
+exit(-1);
+}
 printf(COLOUR_GREEN"Welcome to SuccessionCLI! Written by Samg_is_a_Ninja and Hassan’s Tech (demhademha) \n Special thanks to pwn20wnd (mountpoint and rsync args) and shmoopi (for iOS System Services \n If you found this tool useful, then consider donating to demhademha at https://www.paypal.me/demhademha and to Samg_is_a_Ninja at \n https://www.paypal.me/SamGardner4 In addition, you can visit https://github.com/Samgisaninja/SuccessionRestore/tree/SuccessionCLI to get support \n"COLOUR_RESET);
 
 /*NSString *systemVersion =systemversion();
