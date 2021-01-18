@@ -87,10 +87,10 @@ log_trace("setting the  device common name");
 NSString *deviceCommonName =devicecommonname();
 log_trace("The device common name  is   %s", [deviceCommonName UTF8String]);
 log_trace("Checking if the device is an iPhone 6s on iOS 9");   
-    if (deviceType  == "iPhone8,1" ) || ( deviceType   == @"iPhone8,2" ) 
+    if ([deviceType isEqualToString: @"iPhone8,1"] || [deviceType isEqualToString: @"iPhone8,2"]) 
 {
 log_trace("Device is not supported, displaying failure alert");
-printf(COLOUR_RED("Succession is disabled: the iPhone 6s cannot be activated on iOS 9."COLOUR_RESET);
+printf(COLOUR_RED"Succession is disabled: the iPhone 6s cannot be activated on iOS 9."COLOUR_RESET);
 log_trace("Aborting succession");
 exit(-1);
 }
